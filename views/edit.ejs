@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Edit entry</div>
+	<form class="ui form" action="/journals/<%= journal._id %>?_method=PUT" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="journal[title]" value="<%= journal.title %>">
+		</div>
+		<div class="field">
+			<label>Image source</label>
+			<input type="text" name="journal[image]" value="<%= journal.image %>">
+		</div>
+		<div class="field">
+			<textarea name="journal[body]"><%= journal.body %></textarea>
+		</div>
+		<a href="/journals/<%= journal._id %>" class="ui black basic button">Cancel</a>
+		<input type="submit" class="ui black basic button">
+	</form>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge center aligned header">
+		<%= journal.title %>
+	</div>
+	<div class="ui top attached">
+		<img class="ui fluid image" src="<%= journal.image %>">
+		<div class="body">
+			<p><%- journal.body %></p>
+		</div>
+	</div>
+	<div class="showextra">
+		<span class="created">Date posted: <%= journal.create.toDateString() %></span>
+		<a class="editBtn" href="/journals/<%= journal._id %>/edit"><i class="edit outline icon"></i></a>
+		<form id="delete" action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
+			<button class="deleteBtn"><i class="trash alternate outline icon"></i></button>
+		</form>
+	</div>
+</div>
+
+<% include partials/footer %>

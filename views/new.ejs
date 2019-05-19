@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">New entry</div>
+	<form class="ui form" action="/journals" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" name="journal[title]" placeholder="title">
+		</div>
+		<div class="field">
+			<label>Image source</label>
+			<input type="text" name="journal[image]" placeholder="image source">
+		</div>
+		<div class="field">
+			<textarea name="journal[body]"></textarea>
+		</div>
+		<input type="submit" class="ui black basic button">
+	</form>
+</div>
+
+<% include partials/footer %>

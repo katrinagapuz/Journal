@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<div class="ui main text container">
+	<div class="ui huge header">JournalApp</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% journals.forEach(function (journal){ %>
+				<div class="item">
+					<div class="image">
+						<img src="<%= journal.image %>">
+					</div>
+					<div class="content">
+						<a class="header" href="/journals/<%= journal._id %>"><%= journal.title %></a>
+						<div class="meta">
+							<span><%= journal.create.toDateString() %></span>
+						</div>
+						<div class="description">
+							<p><%- journal.body.substring(0, 100) %>...</p>
+						</div>
+						<div class="extra">
+							<a class="ui mini black basic button" href="/journals/<%= journal._id %>">Read more</a>
+						</div>
+					</div>
+				</div>
+			<% }); %>
+		</div>
+	</div>
+</div>
+<% include partials/footer %>
